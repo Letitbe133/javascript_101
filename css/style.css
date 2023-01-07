@@ -31,8 +31,9 @@ section {
   aspect-ratio: 16 / 9;
   object-fit: cover;
 }
-code {
-  font-size: clamp(1.2rem, 3vw, 1.5rem);
+code,
+section {
+  font-size: clamp(1.3rem, 6vw, 1.6rem);
 }
 .tooltip {
   position: relative;
