@@ -5,11 +5,7 @@ header {
   display: flex;
   flex-direction: column;
   align-items: center;
-}
-#topBtn {
-  position: fixed;
-  bottom: 2rem;
-  right: 2rem;
+  padding-top: 2rem;
 }
 .nav-list {
   list-style: none;
@@ -19,12 +15,24 @@ header {
 .nav-item {
   margin-right: 1rem;
 }
-code {
-  font-size: clamp(1rem, 3vw, 1.5rem);
-}
 main {
   padding: 1rem clamp(1rem, 2rem, 3rem);
-  /* font-size: clamp(1rem, 3vw, 1.5rem); */
+  max-width: 900px;
+  margin: auto;
+}
+section {
+  margin-bottom: 2rem;
+}
+.imgContainer {
+  margin-bottom: 2rem;
+}
+.imgContainer img {
+  max-width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+}
+code {
+  font-size: clamp(1.2rem, 3vw, 1.5rem);
 }
 .tooltip {
   position: relative;
@@ -33,15 +41,16 @@ main {
   opacity: 1;
 }
 .tooltip::before {
-  content: "un bloc est un ensemble d'instructions délimité par des accolades {}";
+  content: "{...code...}";
   position: absolute;
   top: -3.2rem;
   left: 0;
   border: 1px solid purple;
-  width: max-content;
+  max-width: 20rem;
   padding: 0.1rem 0.5rem;
   border-radius: 3px;
   opacity: 0;
+  background: rgb(255, 255, 255);
   transition: opacity 150ms linear;
 }
 .tooltip::after {
@@ -51,4 +60,9 @@ main {
   left: 0;
   border: 1px dashed purple;
   width: 100%;
+}
+#topBtn {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
 }
