@@ -1,0 +1,54 @@
+html {
+  scroll-behavior: smooth;
+}
+header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+#topBtn {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+}
+.nav-list {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+}
+.nav-item {
+  margin-right: 1rem;
+}
+code {
+  font-size: clamp(1rem, 3vw, 1.5rem);
+}
+main {
+  padding: 1rem clamp(1rem, 2rem, 3rem);
+  /* font-size: clamp(1rem, 3vw, 1.5rem); */
+}
+.tooltip {
+  position: relative;
+}
+.tooltip:hover::before {
+  opacity: 1;
+}
+.tooltip::before {
+  content: "un bloc est un ensemble d'instructions délimité par des accolades {}";
+  position: absolute;
+  top: -3.2rem;
+  left: 0;
+  border: 1px solid purple;
+  width: max-content;
+  padding: 0.1rem 0.5rem;
+  border-radius: 3px;
+  opacity: 0;
+  transition: opacity 150ms linear;
+}
+.tooltip::after {
+  content: "";
+  position: absolute;
+  bottom: -0.5rem;
+  left: 0;
+  border: 1px dashed purple;
+  width: 100%;
+}

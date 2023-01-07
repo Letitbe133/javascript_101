@@ -1,0 +1,8 @@
+header {
+  display: flex;
+  justify-content: space-between;
+}
+main {
+  max-width: 900px;
+  margin: auto;
+}

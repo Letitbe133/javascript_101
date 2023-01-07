@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/milligram/1.4.1/milligram.min.css"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+    <link
+      rel="stylesheet"
+      href="css/desktop.css"
+      media="screen and (min-width:80rem)"
+    />
+    <style>
+      /* Larger than mobile screen */
+      @media (min-width: 40rem) {
+      }
+
+      /* Larger than tablet screen */
+      @media (min-width: 80rem) {
+      }
+
+      /* Larger than desktop screen */
+      @media (min-width: 120rem) {
+      }
+    </style>
+    <title>Javascript 101</title>
+  </head>
+  <body>
+    <header id="top">
+      <h1 class="text-center">Javascript 101</h1>
+      <nav>
+        <ul class="nav-list">
+          <li class="nav-item">
+            <a class="button button-clear" href="#back-to-the-future"
+              >Back to the future !</a
+            >
+          </li>
+          <li class="nav-item">
+            <a class="button button-clear" href="#programming-building-blocks"
+              >Programming building blocks</a
+            >
+          </li>
+          <li class="nav-item">
+            <a class="button button-clear" href="#exercices">Exercices</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <section id="back-to-the-future">
+        <h2 class="text-center">Back to the future !</h2>
+        <p>
+          JavaScript est un langage de programmation créé en 1995 par Netscape.
+          Il a été conçu pour ajouter de l'interactivité aux pages Web, et est
+          rapidement devenu l'un des langages de programmation les plus
+          populaires.
+        </p>
+        <p>
+          Fin des années 1990, début des années 2000, JavaScript a été
+          principalement utilisé pour des tâches simples comme par exemple la
+          validation des formulaires. Cependant, avec la montée en puissance des
+          navigateurs web, JavaScript a su gérer des tâches plus complexes,
+          comme la création d'animations et de jeux.
+        </p>
+        <p>
+          Au milieu des années 2000, l'émergence d'applications Web a conduit au
+          développement de librairies et de frameworks tels que jQuery et
+          AngularJS, ce qui a permit le développement d' applications plus
+          complexes.
+        </p>
+        <p>
+          Aujourd'hui, JavaScript est un élément clé du web moderne. Il est
+          tilisé pour créer des sites interactifs et dynamiques, construire des
+          applications mobiles et créer des applications côté serveur (grâce à
+          Node JS). Il peut également être utilisé en conjonction avec d'autres
+          technologies telles que WebGL pour créer des graphismes 3D pour les
+          applications web.
+        </p>
+      </section>
+      <section id="programming-building-blocks">
+        <h2 class="text-center">Programming building blocks</h2>
+        <article>
+          <h3>Variables</h3>
+          <p>
+            Une variable est un conteneur nommé qui permet de stocker des
+            données en mémoire.
+          </p>
+          <p>On utilise les mots-clés suivants pour déclarer des variables:</p>
+          <ul>
+            <li>var</li>
+            <li>let</li>
+            <li>const</li>
+          </ul>
+          <p>
+            var et let ont le même objectif mais présentent quelques
+            différences, dont la principale est leur portée.
+          </p>
+
+          <p>
+            La portée d'une variable déclarée avec var est locale au contexte
+            dans lequel elle a été déclarée. Par exemple, si elle est déclarée
+            dans une fonction, sa portée sera locale a celle-ci et
+            éventuellement aux fonctions qui seraient imbriquées. Si elle est
+            déclarée en dehors d'une fonction, sa portée sera dite globale.
+          </p>
+
+          <p>
+            Les variables déclarées avec let par contre, ont une portée
+            <span class="tooltip">bloc</span>, ce qui signifie qu'elles ne sont
+            visibles que dans le bloc dans lequel elles sont déclarées. Elle
+            seront également globales si elles sont déclarées en dehors d'un
+            bloc.
+          </p>
+
+          <p>Voici un exemple qui illustre la différence entre var et let :</p>
+
+          <pre><code>
+function foo() {
+    if (true) {
+    var x = 5;
+    console.log(x); // prints 5
+    }
+    console.log(x); // prints 5
+}
+
+function bar() {
+    if (true) {
+    let y = 5;
+    console.log(y); // prints 5
+    }
+    console.log(y); // ReferenceError: y is not defined
+}
+        </code></pre>
+          <p>
+            Dans la fonction foo, la variable var x est déclarée à l'intérieur
+            d'un bloc, mais est toujours visible à l'extérieur de ce bloc.
+          </p>
+          <p>
+            Dans la fonction bar par contre, la variable let y est déclarée dans
+            le bloc if, et elle n'est pas visible à l'extérieur du bloc.
+          </p>
+          <p>
+            Une autre différence entre var et let est que les variables var sont
+            sujettes au hoisting (remontée), ce qui signifie qu'elles peuvent
+            être consultées avant qu'elles ne soient déclarées (elles auront
+            alors pour valeur undefined).
+          </p>
+          <p>
+            Les variables let, par contre, ne sont pas hoisted, et ne peuvent
+            pas être consultées avant leur déclaration.
+          </p>
+          <p>Voici un exemple qui illustre cette différence :</p>
+          <pre><code>
+console.log(x); // undefined
+var x = 5;
+
+console.log(y); // ReferenceError: y is not defined
+let y = 5;
+</code></pre>
+          <p>
+            Dans le premier exemple, la variable var x est accessible avant
+            qu'elle ne soit déclarée, mais elle n'est pas initialisée. C'est
+            parce que les variables var sont automatiquement initialisées à
+            undefined lorsqu'elles sont déclarées.
+          </p>
+          <p>
+            Dans le deuxième exemple, on accède à la variable let y avant
+            qu'elle ne soit déclarée et une erreur de type ReferenceError est
+            levée.
+          </p>
+          <p>
+            Une autres différence entre var et let est le fait que les variables
+            let ne peuvent pas être rédéclarées dans le même bloc (une erreur
+            sera levée), alors que les variables var peuvent l'être.
+          </p>
+
+          <p>
+            Prenez l'habitude de déclarer vos variables avec let, les règles de
+            portée vous éviteront les re-déclarations accidentelles et d'autres
+            types de bugs.
+          </p>
+          <p>
+            Notez quand même que var est toujours largement utilisé et que vous
+            pouvez le rencontrer par exemple dans du code legacy.
+          </p>
+
+          <p>
+            const est un autre mot clé utilisé qui permet de déclarer des
+            constantes en JavaScript.
+          </p>
+          <p>
+            Les constantes ont également une portée bloc, comme les variables
+            let, mais on ne peut pas leur réaffecter de valeur après leur
+            déclaration.
+          </p>
+          <p>
+            En clair, une fois que vous attribuez une valeur à une constante,
+            vous ne pouvez pas la modifier.
+          </p>
+
+          <p>Un exemple:</p>
+
+          <pre><code>
+const PI = 3.14;
+PI = 3.14159; // TypeError: Assignment to constant variable.
+
+// If you try to reassign a value to a const variable, a TypeError will be thrown.
+</code></pre>
+
+          <p>
+            Une chose importante à noter sur les constantes : elles ne sont pas
+            immuables. Cela signifie que si vous assignez un objet ou un tableau
+            à une constante, vous pouvez toujours modifier les modifier.
+          </p>
+          <p>Par exemple:</p>
+          <pre><code>
+const arr = [1, 2, 3];
+arr.push(4); // [1, 2, 3, 4]
+</code></pre>
+
+          <p>
+            Dans cet exemple, on assigne à un tableau à la constante arr, et on
+            est en mesure de modifier le tableau en utilisant la méthode push.
+            Par contre, on ne peut pas réaffecter un nouveau tableau ou une
+            valeur différente à arr.
+          </p>
+
+          <p>
+            En résumé, utilisez const pour déclarer des variables dont vous ne
+            voulez pas modifier la valeur, et utilisez let quand vous devez
+            réaffecter la valeur.
+          </p>
+          <h3>data types</h3>
+          <p>
+            En JavaScript, il existe plusieurs types de données que vous pouvez
+            utiliser pour stocker des valeurs.
+          </p>
+          <p>Voici une liste des différents types de données :</p>
+          <ul>
+            <li>
+              Number: Un type de données Number représente des valeurs
+              numériques. En JavaScript, il n'y a qu'un seul type de nombre, et
+              il peut être soit un entier, soitun décimal (float).
+            </li>
+            <li>
+              String: Un type de données String représente une chaîne de
+              caractères. Une chaîne de caractère peut être définie à l'aide de
+              guillemets simples (') ou doubles ("). On peut aussi utiliser la
+              notation (`) ou Template Literal qui permet d'interpoler des
+              variables.
+            </li>
+            <li>
+              Boolean: Un type de données booléen représente une valeur vraie ou
+              fausse.
+            </li>
+            <li>
+              Null: Le type de données null représente une absence
+              intentionnelle de valeur.
+            </li>
+            <li>
+              Undefined: Le type de données undefined représente une valeur non
+              initialisée.
+            </li>
+            <li>
+              Object: Un type de données Object représente une collection de
+              données et de fonctions qui sont liées.
+            </li>
+            <li>
+              Symbol: Un type de données de symbole est un identifiant unique et
+              immuable.
+            </li>
+          </ul>
+          <p>
+            En plus de ces types de base, JavaScript dispose également de
+            quelques types de données particuliers, comme fonction et array, qui
+            sont en fait des objets ayant des caractéristiques et des
+            fonctionnalités supplémentaires.
+          </p>
+          <p>
+            Il est important de comprendre les différents types de données en
+            JavaScript, car différents types de données nécessitent différentes
+            opérations et méthodes.
+          </p>
+          <h4>Array</h4>
+          <p>
+            En JavaScript, un tableau est un type de données qui représente une
+            liste ordonnée de valeurs de tous types.
+          </p>
+
+          <p>Voici un exemple de tableau :</p>
+          <pre><code>
+const numbers = [1, 2, 3, 4, 5];
+</code></pre>
+          <p>
+            Dans cet exemple, le tableau de nombres comporte cinq éléments : 1,
+            2, 3, 4 et 5.
+          </p>
+          <p>
+            Les éléments d'un tableau sont numérotés, à partir de 0, et vous
+            pouvez y accéder à l'aide de la notation crochet :
+          </p>
+          <pre><code>
+console.log(numbers[0]); // prints 1
+console.log(numbers[1]); // prints 2
+console.log(numbers[2]); // prints 3   
+</code></pre>
+          <p>Vous pouvez aussi modifier les éléments d'un tableau :</p>
+          <pre><code>
+numbers[2] = 100; // modify an element
+numbers[5] = 6; // add a new element
+numbers.length; // prints 6  
+</code></pre>
+          <p>
+            Vous pouvez utiliser des tableaux pour stocker des listes de données
+            (comme une liste de noms ou une liste de nombres), ou vous pouvez
+            les utiliser pour stocker des structures de données plus complexes
+            (comme une liste d'objets).
+          </p>
+          <p>Voici un exemple d'un tableau contenant des valeurs mixtes:</p>
+          <pre><code>
+const mixed = [1, "string", true, [2, 3], { key: "value" }];
+</code></pre>
+          <p>
+            Dans cet exemple, le tableau mixed contient 5 éléments: un number,
+            une string, un boolean, un array, et un object. On peut accéder aux
+            éléments du tableau en utilisant la notation crochet :
+          </p>
+          <pre><code>
+console.log(mixed[0]); // prints 1
+console.log(mixed[1]); // prints 'string'
+console.log(mixed[2]); // prints true
+console.log(mixed[3]); // prints [2, 3]
+console.log(mixed[4]); // prints {key: 'value'}
+</code></pre>
+          <p>
+            On peut également accéder aux éléments d'un tableau imbriqué et d'un
+            objet en utilisant la même notation combinée à la notation point :
+          </p>
+          <pre><code>
+console.log(mixed[3][0]); // prints 2
+console.log(mixed[4].key); // prints 'value'
+</code></pre>
+          <p>
+            Les tableaux peuvent contenir des éléments de tout type, y compris
+            des primitives, des tableaux et des objets. Cela en fait un type de
+            données puissant et flexible car ils permettent de stocker et de
+            manipuler une large gamme de données en un seul endroit.
+          </p>
+          <h4>Object</h4>
+        </article>
+        <article>
+          <h3>Expressions conditionnelles</h3>
+        </article>
+        <article>
+          <h3>Boucles</h3>
+        </article>
+        <article>
+          <h3>Fonctions</h3>
+        </article>
+      </section>
+      <section id="exercices">
+        <h2 class="text-center">Exercices</h2>
+      </section>
+    </main>
+    <a id="topBtn" class="button button-outline" href="#top">Top</a>
+    <footer>
+      <p class="text-center">Copyright &copy; 2022</p>
+    </footer>
+  </body>
+</html>
