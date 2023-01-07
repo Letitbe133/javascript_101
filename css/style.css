@@ -57,7 +57,7 @@ section {
 .tooltip::after {
   content: "";
   position: absolute;
-  bottom: -0.5rem;
+  bottom: -0.2rem;
   left: 0;
   border: 1px dashed purple;
   width: 100%;
@@ -66,4 +66,9 @@ section {
   position: fixed;
   bottom: 2rem;
   right: 2rem;
+}
+.emphasize {
+  color: #9b4dca;
+  font-size: 1.75rem;
+  font-weight: bold;
 }

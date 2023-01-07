@@ -96,27 +96,33 @@
             <li>const</li>
           </ul>
           <p>
-            var et let ont le même objectif mais présentent quelques
-            différences, dont la principale est leur portée.
+            <span class="emphasize">var</span> et
+            <span class="emphasize">let</span> ont le même objectif mais
+            présentent quelques différences, dont la principale est leur portée.
           </p>
 
           <p>
-            La portée d'une variable déclarée avec var est locale au contexte
-            dans lequel elle a été déclarée. Par exemple, si elle est déclarée
-            dans une fonction, sa portée sera locale a celle-ci et
-            éventuellement aux fonctions qui seraient imbriquées. Si elle est
-            déclarée en dehors d'une fonction, sa portée sera dite globale.
+            La portée d'une variable déclarée avec
+            <span class="emphasize">var</span> est locale au contexte dans
+            lequel elle a été déclarée. Par exemple, si elle est déclarée dans
+            une fonction, sa portée sera locale a celle-ci et éventuellement aux
+            fonctions qui seraient imbriquées. Si elle est déclarée en dehors
+            d'une fonction, sa portée sera dite globale.
           </p>
 
           <p>
-            Les variables déclarées avec let par contre, ont une portée
-            <span class="tooltip">bloc</span>, ce qui signifie qu'elles ne sont
-            visibles que dans le bloc dans lequel elles sont déclarées. Elle
-            seront également globales si elles sont déclarées en dehors d'un
-            bloc.
+            Les variables déclarées avec <span class="emphasize">let</span> par
+            contre, ont une portée <span class="tooltip">bloc</span>, ce qui
+            signifie qu'elles ne sont visibles que dans le bloc dans lequel
+            elles sont déclarées. Elle seront également globales si elles sont
+            déclarées en dehors d'un bloc.
           </p>
 
-          <p>Voici un exemple qui illustre la différence entre var et let :</p>
+          <p>
+            Voici un exemple qui illustre la différence entre
+            <span class="emphasize">var</span> et
+            <span class="emphasize">let</span> :
+          </p>
 
           <pre><code>
 function foo() {
@@ -136,22 +142,27 @@ function bar() {
 }
         </code></pre>
           <p>
-            Dans la fonction foo, la variable var x est déclarée à l'intérieur
-            d'un bloc, mais est toujours visible à l'extérieur de ce bloc.
+            Dans la fonction foo, la variable
+            <span class="emphasize">var</span> x est déclarée à l'intérieur d'un
+            bloc, mais est toujours visible à l'extérieur de ce bloc.
           </p>
           <p>
-            Dans la fonction bar par contre, la variable let y est déclarée dans
-            le bloc if, et elle n'est pas visible à l'extérieur du bloc.
+            Dans la fonction bar par contre, la variable
+            <span class="emphasize">let</span> y est déclarée dans le bloc if,
+            et elle n'est pas visible à l'extérieur du bloc.
           </p>
           <p>
-            Une autre différence entre var et let est que les variables var sont
-            sujettes au hoisting (remontée), ce qui signifie qu'elles peuvent
-            être consultées avant qu'elles ne soient déclarées (elles auront
-            alors pour valeur undefined).
+            Une autre différence entre <span class="emphasize">var</span> et
+            <span class="emphasize">let</span> est que les variables
+            <span class="emphasize">var</span> sont sujettes au hoisting
+            (remontée), ce qui signifie qu'elles peuvent être consultées avant
+            qu'elles ne soient déclarées (elles auront alors pour valeur
+            undefined).
           </p>
           <p>
-            Les variables let, par contre, ne sont pas hoisted, et ne peuvent
-            pas être consultées avant leur déclaration.
+            Les variables <span class="emphasize">let</span>, par contre, ne
+            sont pas hoisted, et ne peuvent pas être consultées avant leur
+            déclaration.
           </p>
           <p>Voici un exemple qui illustre cette différence :</p>
           <pre><code>
@@ -162,40 +173,45 @@ console.log(y); // ReferenceError: y is not defined
 let y = 5;
 </code></pre>
           <p>
-            Dans le premier exemple, la variable var x est accessible avant
-            qu'elle ne soit déclarée, mais elle n'est pas initialisée. C'est
-            parce que les variables var sont automatiquement initialisées à
-            undefined lorsqu'elles sont déclarées.
+            Dans le premier exemple, la variable
+            <span class="emphasize">var</span> x est accessible avant qu'elle ne
+            soit déclarée, mais elle n'est pas initialisée. C'est parce que les
+            variables <span class="emphasize">var</span> sont automatiquement
+            initialisées à undefined lorsqu'elles sont déclarées.
           </p>
           <p>
-            Dans le deuxième exemple, on accède à la variable let y avant
-            qu'elle ne soit déclarée et une erreur de type ReferenceError est
-            levée.
+            Dans le deuxième exemple, on accède à la variable
+            <span class="emphasize">let</span> y avant qu'elle ne soit déclarée
+            et une erreur de type ReferenceError est levée.
           </p>
           <p>
-            Une autres différence entre var et let est le fait que les variables
-            let ne peuvent pas être rédéclarées dans le même bloc (une erreur
-            sera levée), alors que les variables var peuvent l'être.
-          </p>
-
-          <p>
-            Prenez l'habitude de déclarer vos variables avec let, les règles de
-            portée vous éviteront les re-déclarations accidentelles et d'autres
-            types de bugs.
-          </p>
-          <p>
-            Notez quand même que var est toujours largement utilisé et que vous
-            pouvez le rencontrer par exemple dans du code legacy.
+            Une autres différence entre <span class="emphasize">var</span> et
+            <span class="emphasize">let</span> est le fait que les variables
+            <span class="emphasize">let</span> ne peuvent pas être rédéclarées
+            dans le même bloc (une erreur sera levée), alors que les variables
+            <span class="emphasize">var</span> peuvent l'être.
           </p>
 
           <p>
-            const est un autre mot clé utilisé qui permet de déclarer des
-            constantes en JavaScript.
+            Prenez l'habitude de déclarer vos variables avec
+            <span class="emphasize">let</span>, les règles de portée vous
+            éviteront les re-déclarations accidentelles et d'autres types de
+            bugs.
+          </p>
+          <p>
+            Notez quand même que <span class="emphasize">var</span> est toujours
+            largement utilisé et que vous pouvez le rencontrer par exemple dans
+            du code legacy.
+          </p>
+
+          <p>
+            <span class="emphasize">const</span> est le mot clé utilisé pour
+            déclarer des constantes en JavaScript.
           </p>
           <p>
             Les constantes ont également une portée bloc, comme les variables
-            let, mais on ne peut pas leur réaffecter de valeur après leur
-            déclaration.
+            <span class="emphasize">let</span>, mais on ne peut pas leur
+            réaffecter de valeur après leur déclaration.
           </p>
           <p>
             En clair, une fois que vous attribuez une valeur à une constante,
@@ -230,8 +246,9 @@ arr.push(4); // [1, 2, 3, 4]
           </p>
 
           <p>
-            En résumé, utilisez const pour déclarer des variables dont vous ne
-            voulez pas modifier la valeur, et utilisez let quand vous devez
+            En résumé, utilisez <span class="emphasize">const</span> pour
+            déclarer des variables dont vous ne voulez pas modifier la valeur,
+            et utilisez <span class="emphasize">let</span> quand vous devez
             réaffecter la valeur.
           </p>
           <h3>data types</h3>
