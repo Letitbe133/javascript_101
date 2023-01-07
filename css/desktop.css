@@ -1,0 +1,12 @@
+nav {
+  position: sticky;
+  top: 0px;
+  background: rgba(255, 255, 255, 0.7);
+}
+nav ul {
+  justify-content: center;
+}
+.nav-item,
+.nav-item a {
+  margin-bottom: 0 !important;
+}
