@@ -13,6 +13,7 @@
       href="css/desktop.css"
       media="screen and (min-width:40rem)"
     />
+    <script src="js/app.js" defer></script>
     <title>Javascript 101</title>
   </head>
   <body>
@@ -27,6 +28,10 @@
           >
         </li>
         <li class="nav-item">
+          <a class="button button-clear" href="#les-bases">Les bases</a>
+        </li>
+
+        <li class="nav-item">
           <a class="button button-clear" href="#programming-building-blocks"
             >Programming building blocks</a
           >
@@ -36,6 +41,14 @@
         </li>
       </ul>
     </nav>
+    <div>
+      <input
+        class="search-input"
+        type="text"
+        placeholder="rechercher un sujet"
+      />
+      <dl class="search-results"></dl>
+    </div>
     <main>
       <section id="back-to-the-future">
         <h2 class="text-center">Back to the future !</h2>
@@ -46,10 +59,10 @@
           />
         </div>
         <p>
-          JavaScript est un langage de programmation créé en 1995 par Netscape.
-          Il a été conçu pour ajouter de l'interactivité aux pages Web, et est
-          rapidement devenu l'un des langages de programmation les plus
-          populaires.
+          JavaScript est un langage de programmation interprété créé en 1995 par
+          Netscape. Il a été conçu pour ajouter de l'interactivité aux pages
+          Web, et est rapidement devenu l'un des langages de programmation les
+          plus populaires.
         </p>
         <p>
           Fin des années 1990, début des années 2000, JavaScript a été
@@ -72,10 +85,113 @@
           technologies telles que WebGL pour créer des graphismes 3D pour les
           applications web.
         </p>
-        <p>Les standards du langage sont définis par la norme ECMAScript</p>
+        <p>
+          Les standards du langage qui constituent la norme ECMAScript sont
+          définis par le groupe ECMA International
+        </p>
+      </section>
+      <section id="les-bases">
+        <h2>Les bases</h2>
+        <p>
+          Javascript est un langage interprété qui s'exécute (principalement)
+          côté client, c'est à dire dans le navigateur. Principalement, parce
+          que depuis la création en 2009 de
+          <a class="resource-link" href="nodejs.org/">Node.js</a> par Ryan Dahl,
+          il peut aussi être exécuté côté serveur.
+        </p>
+        <h3>Où écrire le code Javascript ?</h3>
+        <ul>
+          <li>
+            directement à l'intérieur de balises
+            <span class="emphasize">&lt;script&gt;&lt;/script&gt;</span>
+          </li>
+          <li>dans un fichier externe</li>
+        </ul>
+        <p>
+          Les balises
+          <span class="emphasize">&lt;script&gt;&lt;/script&gt;</span>, peuvent
+          être placées entre les balises
+          <span class="emphasize">&lt;head&gt;&lt;/head&gt;</span> ou
+          directement dans le
+          <span class="emphasize">&lt;body&gt;&lt;/body&gt;</span>
+        </p>
+        <p>Par exemple :</p>
+        <pre><code>
+&lt;head&gt;
+  &lt;script&gt;
+    alert("Hello From the Head");
+  &lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;script&gt;
+    alert("Hello From the Body");
+  &lt;/script&gt;
+&lt;/body&gt;
+</code></pre>
+        <p>
+          Dans le cas d'un fichier externe, on utilise une balise
+          <span class="emphasize">&lt;script&gt;&lt;/script&gt;</span> dont
+          l'attribut <span class="emphasize">src</span> contient le chemin vers
+          le fichier.
+        </p>
+        <p>
+          Une bonne pratique est de positionner cette balise dans le
+          <span class="emphasize">&lt;head&gt;&lt;/head&gt;</span> avec un
+          attribut <span class="emphasize">defer</span> qui permet de retarder
+          l'exécution du script jusqu'à ce que l'analyse du document soit
+          terminée.
+        </p>
+        <pre><code>
+&lt;head&gt;
+  &lt;script src="js/app.js" defer&gt;&lt;/script&gt;
+&lt;/head&gt;
+</code></pre>
+        <p>2 avantages à ça :</p>
+        <ul>
+          <li>pas de blocage du parsing du HTML par le navigateur</li>
+          <li>
+            lorsque le script est exécuté, la structure HTML a déjà été analysée
+          </li>
+        </ul>
+
+        <p>
+          On peut aussi écrire et exécuter du code Javascript directement dans
+          la console du navigateur (outils de dévelopement)
+        </p>
+        <p>
+          Pour des raisons de performance et de lisibilité, il est préférable
+          d'externaliser les scripts. la séparation des différents langages ou
+          codes est aujourd’hui la norme pour essayer de conserver un ensemble
+          le plus propre, le plus compréhensible et le plus facilement
+          maintenable possible.
+        </p>
+        <h3>La syntaxe</h3>
+        <p>
+          Attention à l'indentation. Même si elle n'est pas aussi critique qu'en
+          python, elle est importante pour la lisibilité et la maintenance du
+          code
+        </p>
+        <p>
+          Pensez aux commentaires, ils doivent être pertinents et ils facilitent
+          la compréhension du code (comme la convention de nommage que vous
+          allez adopter d'ailleurs
+        </p>
+        <pre><code>
+  // commentaire sur une seule ligne
+
+  /*
+  commentaire sur 
+  plusieurs lignes
+  */
+</code></pre>
+        <p>
+          En JavaScript, les instructions se terminent par un
+          <span class="emphasize">;</span> mais contrairement à d'autres
+          langages, comme par exemple PHP, ils peuvent être omis.
+        </p>
       </section>
       <section id="programming-building-blocks">
-        <h2 class="text-center">Programming building blocks</h2>
+        <h2>Programming building blocks</h2>
         <div class="imgContainer">
           <img
             src="assets/lego-bricks.jpg"
@@ -84,10 +200,10 @@
         </div>
 
         <article>
-          <h3>Variables</h3>
+          <h3 id="variables" class="sub-topic">Variables</h3>
           <p>
-            Une variable est un conteneur nommé qui permet de stocker des
-            données en mémoire.
+            Une variable c'est en gros un conteneur nommé qui permet de stocker
+            des données en mémoire.
           </p>
           <p>On utilise les mots-clés suivants pour déclarer des variables:</p>
           <ul>
@@ -112,7 +228,8 @@
 
           <p>
             Les variables déclarées avec <span class="emphasize">let</span> par
-            contre, ont une portée <span class="tooltip">bloc</span>, ce qui
+            contre, ont une portée
+            <span class="tooltip" data-content="{...}">bloc</span>, ce qui
             signifie qu'elles ne sont visibles que dans le bloc dans lequel
             elles sont déclarées. Elle seront également globales si elles sont
             déclarées en dehors d'un bloc.
@@ -164,7 +281,7 @@ function bar() {
             sont pas hoisted, et ne peuvent pas être consultées avant leur
             déclaration.
           </p>
-          <p>Voici un exemple qui illustre cette différence :</p>
+          <p>Par exemple :</p>
           <pre><code>
 console.log(x); // undefined
 var x = 5;
@@ -239,10 +356,10 @@ arr.push(4); // [1, 2, 3, 4]
 </code></pre>
 
           <p>
-            Dans cet exemple, on assigne à un tableau à la constante arr, et on
-            est en mesure de modifier le tableau en utilisant la méthode push.
-            Par contre, on ne peut pas réaffecter un nouveau tableau ou une
-            valeur différente à arr.
+            Ici on affecte un tableau à la constante arr, et on est en mesure de
+            modifier le tableau en utilisant la méthode push. Par contre, on ne
+            peut pas réaffecter un nouveau tableau ou une valeur différente à
+            arr.
           </p>
 
           <p>
@@ -251,7 +368,44 @@ arr.push(4); // [1, 2, 3, 4]
             et utilisez <span class="emphasize">let</span> quand vous devez
             réaffecter la valeur.
           </p>
-          <h3>data types</h3>
+          <h3 id="primitives" class="sub-topic">Primitives</h3>
+          <p>
+            Une primitive est une donnée qui n'est pas un objet et n'a pas de
+            méthode.
+          </p>
+          <p>
+            En JavaScript, les valeurs primitives sont non mutables, c'est à
+            dire qu'elles ne peuvent pas être modifiées une fois qu'elles sont
+            créées, au contraire des objets et tableaux, qui sont eux mutables
+            et peuvent être modifiés après leur création.
+          </p>
+          <p>Il existe 7 types de primitives :</p>
+          <ul>
+            <li>string</li>
+            <li>number</li>
+            <li>bigint</li>
+            <li>boolean</li>
+            <li>undefined</li>
+            <li>symbol</li>
+            <li>null</li>
+          </ul>
+
+          <p>
+            Essayer de modifier une valeur primitive n'a aucun effet, parce que
+            la valeur elle-même ne peut pas être changée. On peut par contre
+            créer une nouvelle valeur primitive avec une valeur différente.
+          </p>
+
+          <p>
+            Pour aller plus loin à propos de la notion de mutabilité :
+            <a
+              class="resource-link"
+              href="https://hackernoon.com/mutability-and-immutability-in-javascript-explained-in-detail-x7q33ag"
+              >mutability-and-immutability-in-javascript-explained-in-detail</a
+            >
+          </p>
+
+          <h3 id="data-types" class="sub-topic">data types</h3>
           <p>
             En JavaScript, il existe plusieurs types de données que vous pouvez
             utiliser pour stocker des valeurs.
@@ -302,7 +456,7 @@ arr.push(4); // [1, 2, 3, 4]
             JavaScript, car différents types de données nécessitent différentes
             opérations et méthodes.
           </p>
-          <h4>Array</h4>
+          <h4 id="array" class="sub-topic">Array</h4>
           <p>
             En JavaScript, un tableau est un type de données qui représente une
             liste ordonnée de valeurs de tous types.
@@ -367,16 +521,294 @@ console.log(mixed[4].key); // prints 'value'
             données puissant et flexible car ils permettent de stocker et de
             manipuler une large gamme de données en un seul endroit.
           </p>
-          <h4>Object</h4>
+          <h4 id="object" class="sub-topic">Object</h4>
+          <p>
+            En JavaScript, un objet est un type de données qui est une entité
+            contenant un ensemble de variables (propriétés) et de fonctions
+            (méthodes). Les objets peuvent interagir entre eux. Un objet peut
+            être considéré comme un conteneur pour les propriétés, où chaque
+            propriété a un nom et une valeur.
+          </p>
+
+          <p>
+            La valeur d'une propriété peut être un type de données primitif
+            (comme un nombre ou une chaîne de caractères), ou il peut être un
+            type de données plus complexe (comme une fonction ou un autre
+            objet).
+          </p>
+          <p>Un exemple d'objet ici :</p>
+          <pre><code>
+const person = {
+  name: "John",
+  age: 30,
+  greet: function () {
+    console.log("Hello, my name is " + this.name);
+  },
+};
+</code></pre>
+          <p>
+            Dans cet exemple, l ' objet a trois propriétés: <b>name</b> ,
+            <b>age</b> et <b>greet</b> . Les propriétés <b>name</b> et
+            <b>age</b> contiennent des valeurs primitives (une chaîne de
+            caractères et un nombre, respectivement), et la propriété
+            <b>greet</b> quand à elle contient une fonction.
+          </p>
+          <p>
+            Vous pouvez accéder aux propriétés d'un objet en utilisant la
+            notation
+            <span class="tooltip" data-content="object.property">point</span> ou
+            la notation
+            <span class="tooltip" data-content='object["property"]'
+              >crochet</span
+            >:
+          </p>
+          <pre><code>
+console.log(person.name); // prints 'John'
+console.log(person["age"]); // prints 30
+</code></pre>
+          <p>
+            On peut aussi ajouter, modifier ou supprimer des propriétés d'un
+            objet:
+          </p>
+          <pre><code>
+person.location = "New York"; // add a new property 
+person.age = 31; // modify an existing property 
+delete person.greet; // delete a property
+  </code></pre>
+          <p>
+            Comme les tableaux, les objets sont un type de données puissant et
+            qui vous permettent de regrouper des données et des fonctions liées
+            et de les traiter en tant qu'entité unique.
+          </p>
+          <p>
+            Vous pouvez utiliser des objets pour représenter des objets du monde
+            réel (comme une personne ou une voiture), ou des structures
+            personnalisées pour stocker et manipuler des données dans vos
+            scripts.
+          </p>
+          <h3 id="opérateurs" class="sub-topic">Opérateurs</h3>
+          <h4>Arithmétiques</h4>
+          <ul>
+            <li><span class="emphasize">+</span> : Addition</li>
+            <li><span class="emphasize">-</span> : Soustraction</li>
+            <li><span class="emphasize">*</span> : Multiplication</li>
+            <li><span class="emphasize">/</span> : Division</li>
+            <li>
+              <span class="emphasize">%</span> : Modulo (reste de la division)
+            </li>
+            <li><span class="emphasize">++</span> : Incrément</li>
+            <li><span class="emphasize">--</span> : Décrément</li>
+          </ul>
+
+          <p>
+            Il existe deux façons d'utiliser l'opérateur
+            <span class="emphasize">++</span> : pré-incrément et post-incrément.
+          </p>
+
+          <p>
+            L'opérateur pré-incrément (++x) augmente la valeur de x puis
+            retourne la nouvelle valeur. Par exemple :
+          </p>
+          <pre><code>
+let x = 5;
+console.log(++x); // prints 6
+console.log(x); // prints 6
+</code></pre>
+
+          <p>
+            L'opérateur post-incrément (x++) retourne la valeur courante de x,
+            puis augmente la valeur de x.
+          </p>
+          <pre><code>
+  let x = 5;
+  console.log(x++); // prints 5
+  console.log(x); // prints 6
+  </code></pre>
+
+          <p>Même chose pour l'opérateur <span class="emphasize">--</span></p>
+          <p>
+            Il est important de comprendre la différence entre le pré-incrément
+            et le post-incrément, car l'ordre dans lequel la valeur est
+            incrémentée et retournée peut affecter le comportement de votre
+            script.
+          </p>
+
+          <h4>Affectation</h4>
+          <ul>
+            <li><span class="emphasize">=</span> : Affectation simple</li>
+            <li><span class="emphasize">+=</span> : Addition et affectation</li>
+            <li>
+              <span class="emphasize">-=</span> : Soustraction et affectation
+            </li>
+            <li>
+              <span class="emphasize">*=</span> : Multiplication et affectation
+            </li>
+            <li><span class="emphasize">/=</span> : Division et affectation</li>
+
+            <li><span class="emphasize">%=</span> : Modulo et affectation</li>
+          </ul>
+
+          <h4>Comparaison</h4>
+          <ul>
+            <li><span class="emphasize">==</span> : Egalité (valeur)</li>
+            <li><span class="emphasize">!=</span> : Inégalité</li>
+            <li>
+              <span class="emphasize">===</span> : Egalité stricte (valeur et
+              type)
+            </li>
+            <li><span class="emphasize">!==</span> : Inégalité stricte</li>
+            <li><span class="emphasize">&gt;</span> : Strictement supérieur</li>
+            <li><span class="emphasize">&lt;</span> : Strictement inférieur</li>
+            <li><span class="emphasize">&gt;=</span> : Supérieur ou égal</li>
+            <li><span class="emphasize">&lt;=</span> : Inférieur ou égal</li>
+          </ul>
+          <h4>Logique</h4>
+          <ul>
+            <li><span class="emphasize">&&</span> : Et</li>
+            <li><span class="emphasize">||</span> : Ou</li>
+            <li>
+              <span class="emphasize">??</span> : Opérateur de coalescence des
+              nuls
+            </li>
+          </ul>
+
+          <h4>Divers</h4>
+          <ul>
+            <li>
+              <span class="emphasize">typeof</span> : Retourne le type d'une
+              valeur
+            </li>
+            <li>
+              <span class="emphasize">instanceof</span> : Renvoie vrai si un
+              objet est une instance d'un constructeur spécifique
+            </li>
+          </ul>
+          <p>
+            Et il en existe encore bien d'autres. Plus approfondir le sujet :
+            <a
+              href="https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Operators"
+              class="resource-link"
+              >Liste des opérateurs Javascript (MDN)</a
+            >
+          </p>
+          <p>
+            Les différents types d'opérateurs vous permettent d'effectuer
+            diverses opérations sur les valeurs et de contrôler le flux de votre
+            code.
+          </p>
         </article>
         <article>
-          <h3>Expressions conditionnelles</h3>
+          <h3 id="expressions-conditionnelles" class="sub-topic">
+            Expressions conditionnelles
+          </h3>
+          <p>
+            Vous pouvez utiliser des expressions conditionnelles pour exécuter
+            différents blocs de code basés sur le fait qu'une condition est
+            évaluée comme vraie ou fausse.
+          </p>
+          <p>
+            Voici une liste des principales structures conditionnelles en
+            JavaScript :
+          </p>
+          <ul>
+            <li>
+              <span class="emphasize">if</span> : permet d'exécuter un bloc de
+              code si une certaine condition est vraie.
+              <pre><code>
+if (condition) {
+  // code to be executed if condition is true
+}
+</code></pre>
+            </li>
+
+            <li>
+              <span class="emphasize">if...else</span> : L'instruction if...else
+              permet d'exécuter un bloc de code si une certaine condition est
+              vraie, et un bloc différent si la condition est fausse.
+              <pre><code>
+if (condition) {
+  // code to be executed if condition is true
+} else {
+  // code to be executed if condition is false
+}
+</code></pre>
+            </li>
+            <li>
+              <span class="emphasize">? ... :</span> : l'opérateur ternaire est
+              utilisé comme un raccourci de la structure
+              <span class="emphasize">if...else</span>
+              <pre><code>
+let age = 20;
+let isAdult = (age > 18) ? true : false;
+console.log(isAdult) // will output true since age > 18
+</code></pre>
+            </li>
+
+            <li>
+              <span class="emphasize">if...else if...else</span> : permet de
+              spécifier plusieurs conditions et d'exécuter différents blocs de
+              code selon quelle condition est vraie.
+              <pre><code>
+if (condition1) {
+  // code to be executed if condition1 is true
+} else if (condition2) {
+  // code to be executed if condition1 is false and condition2 is true
+} else {
+  // code to be executed if condition1 and condition2 are false
+}
+</code></pre>
+            </li>
+            <li>
+              <span class="emphasize">switch</span> : switch vous permet de
+              spécifier plusieurs conditions et d'exécuter différents blocs de
+              code selon la valeur d'une certaine expression.
+              <pre><code>
+switch (expression) {
+  case value1:
+    // code to be executed if expression === value1
+    break;
+  case value2:
+    // code to be executed if expression === value2
+    break;
+  default:
+  // code to be executed if expression does not match any case
+}
+</code></pre>
+            </li>
+          </ul>
         </article>
         <article>
-          <h3>Boucles</h3>
+          <h3 id="boucles" class="sub-topic">Boucles</h3>
+          <p>
+            Les boucles sont utilisées pour exécuter un bloc de code à plusieurs
+            reprises.
+          </p>
+
+          <ul>
+            <li>
+              <span class="emphasize">for</span> : La boucle for permet de
+              spécifier un compteur de boucle et d'exécuter un bloc de code pour
+              un nombre spécifié d'itérations.
+              <pre><code>
+for (let i = 1; i &lt;= 10; i++) {
+  // code to be executed as long as i is &lt;= 10
+}
+</code></pre>
+            </li>
+
+            <li>
+              <span class="emphasize">forEach</span> : La méthode forEach permet
+              d'exécuter une fonction pour chaque élément dans un tableau.
+              <pre><code>
+array.forEach(function (element) {
+  // code to be executed for each element
+});
+</code></pre>
+            </li>
+          </ul>
         </article>
         <article>
-          <h3>Fonctions</h3>
+          <h3 id="fonctions" class="sub-topic">Fonctions</h3>
         </article>
       </section>
       <section id="exercices">
@@ -385,7 +817,7 @@ console.log(mixed[4].key); // prints 'value'
     </main>
     <a id="topBtn" class="button button-outline" href="#top">Top</a>
     <footer>
-      <p class="text-center">Copyright &copy; 2022</p>
+      <p class="text-center">Copyright &copy; Cooldev 2022</p>
     </footer>
   </body>
 </html>

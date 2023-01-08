@@ -1,6 +1,11 @@
 html {
   scroll-behavior: smooth;
 }
+a,
+a:active,
+a:visited {
+  color: #606c76;
+}
 header {
   display: flex;
   flex-direction: column;
@@ -42,7 +47,7 @@ section {
   opacity: 1;
 }
 .tooltip::before {
-  content: "{...code...}";
+  content: attr(data-content);
   position: absolute;
   top: -3.2rem;
   left: 0;
@@ -71,4 +76,8 @@ section {
   color: #9b4dca;
   font-size: 1.75rem;
   font-weight: bold;
+}
+.resource-link {
+  text-decoration: underline;
+  text-decoration-color: purple;
 }
