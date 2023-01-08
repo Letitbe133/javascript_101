@@ -10,7 +10,9 @@ searchInput.addEventListener("input", (e) => {
   resultsContainer.innerHTML = "";
   const { value } = e.target;
   if (value) {
-    const results = topics.filter((string) => string.includes(value));
+    const results = topics.filter((string) =>
+      string.includes(value.toLowerCase())
+    );
     results.forEach((result) => {
       const dt = document.createElement("dt");
       const link = document.createElement("a");
