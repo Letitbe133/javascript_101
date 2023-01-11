@@ -90,9 +90,9 @@ footer {
 .article {
   border: 1px solid transparent;
   border-radius: 0.5rem;
-  box-shadow: 0.2rem 0.2rem 2.5rem 1rem hsla(277.4, 54.1%, 54.7%, 0.6);
+  box-shadow: 0.1rem 0.1rem 2.5rem 1rem hsla(277.4, 54.1%, 54.7%, 0.6);
   padding: 2rem 3rem;
-  margin-bottom: 5rem;
+  margin-bottom: 7rem;
 }
 
 .article__header {
