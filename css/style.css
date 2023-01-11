@@ -50,13 +50,14 @@ section {
   content: attr(data-content);
   position: absolute;
   top: -3.2rem;
-  left: 0;
+  left: 50%;
   border: 1px solid purple;
   max-width: 20rem;
   padding: 0.1rem 0.5rem;
   border-radius: 3px;
   opacity: 0;
   background: rgb(255, 255, 255);
+  transform: translate(-50%, -50%);
   transition: opacity 150ms linear;
 }
 .tooltip::after {
@@ -80,4 +81,27 @@ section {
 .resource-link {
   text-decoration: underline;
   text-decoration-color: purple;
+}
+footer {
+  text-align: center;
+}
+
+/* Exercises page */
+.article {
+  border: 1px solid transparent;
+  border-radius: 0.5rem;
+  box-shadow: 0.2rem 0.2rem 2.5rem 1rem hsla(277.4, 54.1%, 54.7%, 0.6);
+  padding: 2rem 3rem;
+  margin-bottom: 5rem;
+}
+
+.article__header {
+  font-size: 3rem;
+  color: hsla(277.4, 54.1%, 54.7%, 1);
+  margin-bottom: 3rem;
+}
+
+.article__footer {
+  color: hsla(277.4, 54.1%, 54.7%, 1);
+  font-size: 2rem;
 }

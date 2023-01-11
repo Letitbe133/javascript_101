@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/milligram/1.4.1/milligram.min.css"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+    <link
+      rel="stylesheet"
+      href="css/desktop.css"
+      media="screen and (min-width:40rem)"
+    />
+    <script src="js/app.js" defer></script>
+    <title>Javascript 101</title>
+  </head>
+  <body>
+    <header id="top">
+      <h1 class="text-center"><a href="index.html">Javascript 101</a></h1>
+    </header>
+    <nav>
+      <ul class="nav-list">
+        <li class="nav-item">
+          <a class="button button-clear" href="index.html#back-to-the-future"
+            >Back to the future !</a
+          >
+        </li>
+        <li class="nav-item">
+          <a class="button button-clear" href="index.html#les-bases"
+            >Les bases</a
+          >
+        </li>
+
+        <li class="nav-item">
+          <a
+            class="button button-clear"
+            href="index.html#programming-building-blocks"
+            >Building blocks</a
+          >
+        </li>
+      </ul>
+    </nav>
+    <!-- <div>
+      <input
+        class="search-input"
+        type="text"
+        placeholder="rechercher un sujet"
+      />
+      <dl class="search-results"></dl>
+    </div> -->
+    <main>
+      <article class="article">
+        <h2 class="article__header">Tables de multiplication</h2>
+        <div class="article__content">
+          <p>
+            Pour un nombre donné, générer la table de multiplication
+            correspondante
+          </p>
+          <p>
+            Dans un premier temps, le nombre correspondant à la table sera "hard
+            codé" et affecté à une variable. Pour changer de table, il faudra
+            donc ré affecter une nouvelle valeur à cette variable.
+          </p>
+          <p>Fonctionnel mais pas très pratique...</p>
+          <p>
+            Vous pouvez faire évoluer votre code et le rendre plus modulable en
+            créant une fonction qui acceptera un paramètre (qui représentera le
+            nombre pour lequel vous voulez afficher la table) et qui exécutera
+            votre code en utilisant la valeur de ce paramètre.
+          </p>
+          <p>Et ça c'est bien plus cool !</p>
+          <pre><code>
+function double(value) {
+    let result = value * 2;
+    console.log(result);
+}
+
+double(6); // affichera 12 dans la console
+
+</code></pre>
+        </div>
+        <div class="article__footer">#boucle #opérateur #number #fonction</div>
+      </article>
+      <article class="article">
+        <h2 class="article__header">Détecteur de palindrome</h2>
+        <div class="article__content">
+          <p>Détecter si un mot est un palindrome.</p>
+          <p>
+            Instant culture : un palidrome est un mot (ou un groupe de mots) que
+            l'on peut lire indifféremment de gauche à droite ou de droite à
+            gauche.
+          </p>
+          <p>
+            Dans un premier temps, le mot à tester sera "hard codé" et affecté à
+            une variable. Pour tester un autre mot, il faudra donc ré affecter
+            une nouvelle valeur à cette variable.
+          </p>
+          <p>
+            Comme pour l'exercice des tables de multiplication, c'est
+            fonctionnel mais pas très pratique.
+          </p>
+          <p>
+            Faites évoluer votre code et rendez le plus modulable en créant une
+            fonction qui acceptera un paramètre (le mot que vous voules tester)
+            et qui exécutera votre code en utilisant la valeur de ce paramètre.
+          </p>
+          <p>
+            On affichera en console le message "C'est un palindrome" si le mot
+            en est un, et "Ce n'est pas un palindrome" dans le cas contraire.
+          </p>
+        </div>
+        <div class="article__footer">#boucle #opérateur #string #fonction</div>
+      </article>
+    </main>
+    <a id="topBtn" class="button button-outline" href="#top">Top</a>
+    <footer>
+      <p class="text-center">
+        Made with 💜 and
+        <a href="https://milligram.io/" target="_blank" rel="noopener"></a> by
+        &copy; Cooldev 2023
+      </p>
+    </footer>
+  </body>
+</html>
