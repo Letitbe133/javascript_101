@@ -68,7 +68,7 @@
             Vous pouvez faire évoluer votre code et le rendre plus modulable en
             créant une fonction qui acceptera un paramètre (qui représentera le
             nombre pour lequel vous voulez afficher la table) et qui exécutera
-            votre code en utilisant la valeur de ce paramètre.
+            votre code en utilisant la valeur de ce paramètre (argument).
           </p>
           <p>Et ça c'est bien plus cool !</p>
           <pre><code>
@@ -104,7 +104,8 @@ double(6); // affichera 12 dans la console
           <p>
             Faites évoluer votre code et rendez le plus modulable en créant une
             fonction qui acceptera un paramètre (le mot que vous voules tester)
-            et qui exécutera votre code en utilisant la valeur de ce paramètre.
+            et qui exécutera votre code en utilisant la valeur de ce paramètre
+            (argument).
           </p>
           <p>
             On affichera en console le message "C'est un palindrome" si le mot
@@ -129,7 +130,7 @@ double(6); // affichera 12 dans la console
           <p>
             Faites évoluer votre code et rendez le plus modulable en créant une
             fonction qui acceptera une string et qui exécutera votre code en
-            utilisant la valeur de ce paramètre.
+            utilisant la valeur de ce paramètre (argument).
           </p>
           <p>
             On affichera en console le nombre de voyelles contenues dans la
@@ -139,13 +140,178 @@ double(6); // affichera 12 dans la console
         </div>
         <div class="article__footer">#boucle #opérateur #string #fonction</div>
       </article>
+      <article class="article">
+        <h2 class="article__header">Capitalize</h2>
+        <div class="article__content">
+          <p>
+            Mettre en majuscule la première lettre de chaque mot d'une
+            <span class="tooltip" data-content="Chaîne de caractères"
+              >string</span
+            >
+          </p>
+          <p>
+            Pour commencer, affectez la chaîne de caratères à une variable. Pour
+            tester une autre
+            <span class="tooltip" data-content="Chaîne de caractères"
+              >string</span
+            >, il faudra donc ré affecter une nouvelle valeur à cette variable.
+          </p>
+          <p>
+            Rendez votre code plus modulable en créant une fonction qui prendra
+            en paramètre une string et qui exécutera votre code en utilisant la
+            valeur de ce paramètre (argument).
+          </p>
+          <p>Affichez dans la console la nouvelle chaîne de caractères.</p>
+        </div>
+        <div class="article__footer">#boucle #condition #string #fonction</div>
+      </article>
+      <article class="article">
+        <h2 class="article__header">Caractère le plus fréquent</h2>
+        <div class="article__content">
+          <p>
+            Trouver le caractère qui apparaît le plus fréquemment dans une
+            chaîne de caractères
+          </p>
+          <p>
+            Pour commencer, affectez la chaîne de caratères à une variable. Pour
+            tester une autre string, affectez une nouvelle valeur à cette
+            variable.
+          </p>
+          <p>
+            Rendez votre code plus modulable en créant une fonction qui prendra
+            en paramètre une string et qui exécutera votre code en utilisant la
+            valeur de ce paramètre (argument).
+          </p>
+          <p>
+            Affichez dans la console le caractère qui apparaît le plus
+            fréquemment.
+          </p>
+          <p>
+            Allez plus loin en affichant dans la console un objet contenant un
+            propriété "character" dont la valeur sera le caractère, et une
+            propriété "frequency" dont la valeur sera le nombre d'occurences.
+          </p>
+        </div>
+        <div class="article__footer">
+          #boucle #condition #string #objet #fonction
+        </div>
+      </article>
+      <article class="article">
+        <h2 class="article__header">Le mot le plus long</h2>
+        <div class="article__content">
+          <p>Trouver le mot le plus long dans une chaîne de caractères.</p>
+          <p>
+            Affectez la chaîne de caratères à tester à une variable. Pour tester
+            une autre string, affectez une nouvelle valeur à cette variable.
+          </p>
+          <p>
+            Rendez votre code plus modulable en créant une fonction qui prendra
+            en paramètre une string et qui exécutera votre code en utilisant la
+            valeur de ce paramètre (argument).
+          </p>
+          <p>Affichez dans la console le mot le plus long.</p>
+          <p>
+            Allez plus loin : si la chaîne de caractères contient plusieurs mots
+            qui ont la même longueur (et sont bien sûr les plus longs), affichez
+            dans la console un tableau contenant ces mots.
+          </p>
+        </div>
+        <div class="article__footer">
+          #boucle #condition #string #tableau #fonction
+        </div>
+      </article>
+      <article class="article">
+        <h2 class="article__header">Pierre, feuille, ciseaux</h2>
+        <div class="article__content">
+          <p>Recréez le jeu "Pierre, feuille, ciseaux".</p>
+          <p>
+            Au lancement du script, vous générerez un choix aléatoire parmi les
+            options Pierre, feuille, ciseaux et vous le stockerez dans une
+            variable.
+          </p>
+          <p>Vous demanderez à l'utilisateur de choisir à son tour.</p>
+          <p>
+            Si l'utilisateur gagne, affichez en console "Le joueur a gagné",
+            sinon "L'ordinateur a gagné"
+          </p>
+          <p>S'il y a égalité, affichez "Egalité"</p>
+          <p>
+            Allez plus loin : faites en sorte que la partie dure 3 tours, et
+            comptabilisez le score. A la fin de la partie vous afficherez en
+            console qui a gagné ainsi que le score.
+          </p>
+          <p>
+            Allez encore plus loin et externalisez votre code dans une fonction
+            qui prendra en paramètre le nombre de tours.
+          </p>
+        </div>
+        <div class="article__footer">
+          #boucle #condition #number #tableau #fonction
+        </div>
+      </article>
+      <article class="article">
+        <h2 class="article__header">
+          Générateur de mot de passe AKA Boss Final
+        </h2>
+        <div class="article__content">
+          <p>Créez un générateur de mot de passe</p>
+          <p>
+            Au lancement du script, vous générerez un mot de passe de 8
+            caractères pouvant contenir des chiffres, des lettres minuscules,
+            des lettres majuscules et les caractères spéciaux "#$%&".
+          </p>
+          <p>
+            Allez plus loin en créant une fonction qui prendra en paramètre la
+            longueur du mot de passe.
+          </p>
+          <pre><code>
+function generatePassword(length) {
+    // code à exécuter
+}
+
+// appel de la fonction
+generatePassword(12) // génère un mot de passe de 12 caractères
+</code></pre>
+
+          <p>
+            Allez encore plus loin. Adaptez votre fonction pour qu'on puisse lui
+            passer en paramètres les options suivantes :
+          </p>
+          <ul>
+            <li>length</li>
+            <li>lower</li>
+            <li>upper</li>
+            <li>numbers</li>
+            <li>symbols</li>
+          </ul>
+          <p>
+            Vous vous assurerez que le mote de passe contient au moins 1
+            caractère correspondant à chaque paramètre qui est à true.
+          </p>
+        </div>
+        <pre><code>
+function generatePassword(length, lower, upper, numbers, symbols) {
+    // code à exécuter
+}
+
+// appel de la fonction
+generatePassword(10, true, true, true, false) // génère un mot de passe de 10 caractères contenant au moins 1 lettre minuscule, 1 majuscule, 1 chiffre, pas de  symbole
+
+</code></pre>
+
+        <div class="article__footer">
+          #boucle #condition #number #String #fromCharCode #tableau #fonction
+        </div>
+      </article>
     </main>
     <a id="topBtn" class="button button-outline" href="#top">Top</a>
     <footer>
       <p class="text-center">
         Made with 💜 and
-        <a href="https://milligram.io/" target="_blank" rel="noopener"></a> by
-        &copy; Cooldev 2023
+        <a href="https://milligram.io/" target="_blank" rel="noopener"
+          >Milligram</a
+        >
+        by &copy; Cooldev 2023
       </p>
     </footer>
   </body>

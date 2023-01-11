@@ -4,13 +4,19 @@ html {
 a,
 a:active,
 a:visited {
-  color: #606c76;
+  text-decoration: underline wavy hsla(277.4, 54.1%, 54.7%, 1);
 }
 header {
   display: flex;
   flex-direction: column;
   align-items: center;
   padding-top: 2rem;
+}
+header h1 a,
+header h1 a:active,
+header h1 a:visited {
+  text-decoration: none;
+  color: #606c76;
 }
 .nav-list {
   list-style: none;
@@ -77,10 +83,6 @@ section {
   color: #9b4dca;
   font-size: 1.75rem;
   font-weight: bold;
-}
-.resource-link {
-  text-decoration: underline;
-  text-decoration-color: purple;
 }
 footer {
   text-align: center;
